@@ -206,7 +206,7 @@ export default function AllTopicsPage() {
           readTime={35}
           slug="analysis-competing-hypotheses"
           category="tools"
-          icon="/analytical-techniques/competing-hypotheses.png"
+          icon="/competing-hypotheses.png"
         />
 
         <TopicListItem

@@ -206,7 +206,7 @@ export default function AllTopicsPage() {
           readTime={35}
           slug="analysis-competing-hypotheses"
           category="tools"
-          icon="/analytical-techniques/competing-hypotheses.png"
+          icon="/competing-hypotheses.png"
         />
 
         <TopicListItem
@@ -214,7 +214,7 @@ export default function AllTopicsPage() {
           readTime={20}
           slug="intelligence-requirements"
           category="tools"
-          icon="/data-collection/intelligence-requirements.png"
+          icon="/intelligence-requirements.png"
         />
       </div>
     </div>

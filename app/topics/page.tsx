@@ -116,7 +116,7 @@ const topics = [
   {
     title: "Analysis of Competing Hypotheses",
     description: "Learn the structured technique for evaluating multiple competing hypotheses.",
-    image: "/analytical-techniques/competing-hypotheses.png",
+    image: "/competing-hypotheses.png",
     href: "/topics/analysis-competing-hypotheses",
     category: "Analysis",
     estimatedTime: "45 min",

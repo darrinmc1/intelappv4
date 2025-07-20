@@ -88,21 +88,15 @@ export function Header() {
       hasDropdown: true,
     },
     {
-      href: "/about",
-      label: "About",
-      active: pathname === "/about",
-    },
-    {
-      id: "admin",
-      label: "Admin",
-      active: pathname.startsWith("/admin"),
-      hasDropdown: true,
-    },
-    {
       id: "other-sites",
       label: "Other Learning Sites",
       active: false,
       hasDropdown: true,
+    },
+    {
+      href: "/about",
+      label: "About",
+      active: pathname === "/about",
     },
   ]
 
@@ -281,86 +275,105 @@ export function Header() {
           </Sheet>
 
           <Link href="/" className="flex items-center gap-3" data-testid="site-logo">
-            <div className="relative w-12 h-12 overflow-hidden rounded-md">
-              <StaticImage
-                src="/intelligence-analysis-workspace.png"
-                alt="Intelligence Analyst Academy Logo"
-                width={48}
-                height={48}
-                className="object-cover"
-              />
+            <div className="relative w-12 h-12 flex items-center justify-center bg-blue-600 rounded-md text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
             </div>
             <span className="font-bold hidden md:inline-block">The Intel Analyst Academy</span>
             <span className="font-bold md:hidden">The Intel Analyst Academy</span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-6">
-            {mainNavItems.map((item) =>
-              item.hasDropdown ? (
-                <div key={item.id} className="relative" ref={item.id === activeDropdown ? dropdownRef : null}>
-                  <button
-                    onClick={() => toggleDropdown(item.id)}
-                    className={cn(
-                      "flex items-center gap-1 text-sm font-medium transition-all duration-200 hover:text-primary group",
-                      item.active || activeDropdown === item.id ? "text-primary" : "text-muted-foreground",
-                    )}
-                    data-testid={`nav-dropdown-${item.id}`}
-                    aria-expanded={activeDropdown === item.id}
-                    aria-controls={`dropdown-${item.id}`}
-                  >
-                    {item.label}
-                    <ChevronDown
-                      className={cn(
-                        "h-4 w-4 transition-transform duration-300",
-                        activeDropdown === item.id ? "rotate-180" : "group-hover:translate-y-[2px]",
-                      )}
-                    />
-                  </button>
-                  <div
-                    id={`dropdown-${item.id}`}
-                    className={cn(
-                      "absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white shadow-lg rounded-md overflow-hidden z-50 transition-all duration-300 ease-in-out origin-top",
-                      activeDropdown === item.id
-                        ? "opacity-100 scale-y-100 translate-y-0"
-                        : "opacity-0 scale-y-95 translate-y-[-10px] pointer-events-none",
-                    )}
-                    style={{
-                      maxWidth: "min(900px, 90vw)",
-                      width: isTablet ? "90vw" : "900px",
-                    }}
-                  >
-                    {item.id === "learning" && (
-                      <LearningDropdown closeDropdowns={closeDropdowns} isMobile={isMobile} isTablet={isTablet} />
-                    )}
-                    {item.id === "resources" && (
-                      <ResourcesDropdown closeDropdowns={closeDropdowns} isMobile={isMobile} isTablet={isTablet} />
-                    )}
-                    {item.id === "admin" && (
-                      <AdminDropdown closeDropdowns={closeDropdowns} isMobile={isMobile} isTablet={isTablet} />
-                    )}
-                    {item.id === "other-sites" && (
-                      <OtherSitesMenu />
-                    )}
-                  </div>
-                </div>
-              ) : (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={cn(
-                    "text-sm font-medium transition-colors hover:text-primary",
-                    item.active ? "text-primary" : "text-muted-foreground",
-                  )}
-                  onClick={closeDropdowns}
-                  data-testid={`nav-link-${item.label.toLowerCase()}`}
-                >
-                  {item.label}
-                </Link>
-              ),
-            )}
-            <Link href="/categories" className="text-sm font-medium transition-colors hover:text-primary">
-              Categories
+            <Link href="/about" className={cn(
+              "text-sm font-medium transition-colors hover:text-primary",
+              pathname === "/about" ? "text-primary" : "text-muted-foreground",
+            )} onClick={closeDropdowns} data-testid="nav-link-about">
+              About
             </Link>
+            <div className="relative" ref={"admin" === activeDropdown ? dropdownRef : null}>
+              <button
+                onClick={() => toggleDropdown("admin")}
+                className={cn(
+                  "flex items-center gap-1 text-sm font-medium transition-all duration-200 hover:text-primary group",
+                  pathname.startsWith("/admin") || activeDropdown === "admin" ? "text-primary" : "text-muted-foreground",
+                )}
+                data-testid="nav-dropdown-admin"
+                aria-expanded={activeDropdown === "admin"}
+                aria-controls="dropdown-admin"
+              >
+                Admin
+                <ChevronDown
+                  className={cn(
+                    "h-4 w-4 transition-transform duration-300",
+                    activeDropdown === "admin" ? "rotate-180" : "group-hover:translate-y-[2px]",
+                  )}
+                />
+              </button>
+              <div
+                id="dropdown-admin"
+                className={cn(
+                  "absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white shadow-lg rounded-md overflow-hidden z-50 transition-all duration-300 ease-in-out origin-top",
+                  activeDropdown === "admin"
+                    ? "opacity-100 scale-y-100 translate-y-0"
+                    : "opacity-0 scale-y-95 translate-y-[-10px] pointer-events-none",
+                )}
+                style={{
+                  maxWidth: "min(900px, 90vw)",
+                  width: isTablet ? "90vw" : "900px",
+                }}
+              >
+                <AdminDropdown closeDropdowns={closeDropdowns} isMobile={isMobile} isTablet={isTablet} />
+              </div>
+            </div>
+            <Link href="/learning-paths" className={cn(
+              "text-sm font-medium transition-colors hover:text-primary",
+              pathname.startsWith("/learning-paths") ? "text-primary" : "text-muted-foreground",
+            )} onClick={closeDropdowns}>
+              Learning Paths
+            </Link>
+            <Link href="/topics" className={cn(
+              "text-sm font-medium transition-colors hover:text-primary",
+              pathname.startsWith("/topics") ? "text-primary" : "text-muted-foreground",
+            )} onClick={closeDropdowns}>
+              Topics
+            </Link>
+            <div className="relative" ref={"other-sites" === activeDropdown ? dropdownRef : null}>
+              <button
+                onClick={() => toggleDropdown("other-sites")}
+                className={cn(
+                  "flex items-center gap-1 text-sm font-medium transition-all duration-200 hover:text-primary group",
+                  activeDropdown === "other-sites" ? "text-primary" : "text-muted-foreground",
+                )}
+                data-testid="nav-dropdown-other-sites"
+                aria-expanded={activeDropdown === "other-sites"}
+                aria-controls="dropdown-other-sites"
+              >
+                Other Learning Sites
+                <ChevronDown
+                  className={cn(
+                    "h-4 w-4 transition-transform duration-300",
+                    activeDropdown === "other-sites" ? "rotate-180" : "group-hover:translate-y-[2px]",
+                  )}
+                />
+              </button>
+              <div
+                id="dropdown-other-sites"
+                className={cn(
+                  "absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white shadow-lg rounded-md overflow-hidden z-50 transition-all duration-300 ease-in-out origin-top",
+                  activeDropdown === "other-sites"
+                    ? "opacity-100 scale-y-100 translate-y-0"
+                    : "opacity-0 scale-y-95 translate-y-[-10px] pointer-events-none",
+                )}
+                style={{
+                  maxWidth: "min(900px, 90vw)",
+                  width: isTablet ? "90vw" : "900px",
+                }}
+              >
+                <OtherSitesMenu />
+              </div>
+            </div>
           </nav>
         </div>
 
