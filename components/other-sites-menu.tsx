@@ -72,7 +72,7 @@ export function OtherSitesMenu() {
                   </Link>
                 )}
               </li>
-            )))}
+            ))}
           </ul>
         </div>
       </div>
