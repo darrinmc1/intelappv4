@@ -1,54 +1,70 @@
-[18:45:53.176] Running build in Washington, D.C., USA (East) – iad1
-[18:45:53.177] Build machine configuration: 2 cores, 8 GB
-[18:45:53.215] Cloning github.com/darrinmc1/IntelAcademyV2 (Branch: main, Commit: 7534597)
-[18:45:53.338] Previous build caches not available
-[18:45:57.063] Cloning completed: 3.848s
-[18:45:57.564] Running "vercel build"
-[18:45:58.782] Vercel CLI 44.4.3
-[18:45:59.961] Installing dependencies...
-[18:46:06.108] npm warn deprecated critters@0.0.25: Ownership of Critters has moved to the Nuxt team, who will be maintaining the project going forward. If you'd like to keep using Critters, please switch to the actively-maintained fork at https://github.com/danielroe/beasties
-[18:46:17.890] 
-[18:46:17.891] added 655 packages in 17s
-[18:46:17.891] 
-[18:46:17.891] 187 packages are looking for funding
-[18:46:17.898]   run `npm fund` for details
-[18:46:17.959] Detected Next.js version: 15.4.1
-[18:46:17.963] Running "npm run build"
-[18:46:18.075] 
-[18:46:18.075] > my-v0-project@0.1.0 build
-[18:46:18.075] > next build
-[18:46:18.075] 
-[18:46:18.904]  ⚠ Invalid next.config.mjs options detected: 
-[18:46:18.905]  ⚠     Expected object, received boolean at "experimental.serverActions"
-[18:46:18.905]  ⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
-[18:46:18.912] Attention: Next.js now collects completely anonymous telemetry regarding usage.
-[18:46:18.912] This information is used to shape Next.js' roadmap and prioritize features.
-[18:46:18.913] You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
-[18:46:18.913] https://nextjs.org/telemetry
-[18:46:18.913] 
-[18:46:18.972]    ▲ Next.js 15.4.1
-[18:46:18.972]    - Experiments (use with caution):
-[18:46:18.973]      ✓ optimizeCss
-[18:46:18.973]      ✓ serverActions
-[18:46:18.973]      ✓ scrollRestoration
-[18:46:18.973]      · optimizePackageImports
-[18:46:18.973] 
-[18:46:19.060]    Creating an optimized production build ...
-[18:46:19.334]  ⚠ Found lockfile missing swc dependencies, run next locally to automatically patch
-[18:46:57.971] Failed to compile.
-[18:46:57.972] 
-[18:46:57.972] ./app/admin/image-debug/page.tsx
-[18:46:57.972] Module not found: Can't resolve '@/components/guaranteed-image'
-[18:46:57.973] 
-[18:46:57.973] https://nextjs.org/docs/messages/module-not-found
-[18:46:57.973] 
-[18:46:57.973] ./app/admin/image-check/page.tsx
-[18:46:57.974] Module not found: Can't resolve '@/components/image-checker'
-[18:46:57.974] 
-[18:46:57.974] https://nextjs.org/docs/messages/module-not-found
-[18:46:57.974] 
-[18:46:57.975] 
-[18:46:57.975] > Build failed because of webpack errors
-[18:46:58.066] Error: Command "npm run build" exited with 1
-[18:46:58.325] 
-[18:47:01.099] Exiting build container
+[11:16:18.995] Running build in Washington, D.C., USA (East) – iad1
+[11:16:18.995] Build machine configuration: 2 cores, 8 GB
+[11:16:19.034] Cloning github.com/darrinmc1/intelappv4 (Branch: master, Commit: 6903ab3)
+[11:16:19.282] Previous build caches not available
+[11:16:26.921] Cloning completed: 7.887s
+[11:16:27.231] Found .vercelignore
+[11:16:27.436] Removed 1841 ignored files defined in .vercelignore
+[11:16:27.436]   /.env
+[11:16:27.437]   /.git/config
+[11:16:27.437]   /.git/description
+[11:16:27.437]   /.git/FETCH_HEAD
+[11:16:27.437]   /.git/HEAD
+[11:16:27.437]   /.git/hooks/applypatch-msg.sample
+[11:16:27.437]   /.git/hooks/commit-msg.sample
+[11:16:27.437]   /.git/hooks/fsmonitor-watchman.sample
+[11:16:27.437]   /.git/hooks/post-update.sample
+[11:16:27.437]   /.git/hooks/pre-applypatch.sample
+[11:16:29.107] Running "vercel build"
+[11:16:29.526] Vercel CLI 44.4.3
+[11:16:29.909] Installing dependencies...
+[11:16:34.584] npm warn deprecated critters@0.0.25: Ownership of Critters has moved to the Nuxt team, who will be maintaining the project going forward. If you'd like to keep using Critters, please switch to the actively-maintained fork at https://github.com/danielroe/beasties
+[11:16:46.341] 
+[11:16:46.342] added 655 packages in 16s
+[11:16:46.342] 
+[11:16:46.342] 187 packages are looking for funding
+[11:16:46.343]   run `npm fund` for details
+[11:16:46.398] Detected Next.js version: 15.4.2
+[11:16:46.399] Running "npm run build:clean"
+[11:16:46.505] 
+[11:16:46.505] > intel-academy-v2@0.1.0 build:clean
+[11:16:46.505] > npm run clear-cache && next build
+[11:16:46.505] 
+[11:16:46.614] 
+[11:16:46.614] > intel-academy-v2@0.1.0 clear-cache
+[11:16:46.614] > node clear-cache.js
+[11:16:46.614] 
+[11:16:46.645] Clearing Next.js cache...
+[11:16:46.646] .next does not exist, skipping...
+[11:16:46.646] node_modules/.cache does not exist, skipping...
+[11:16:46.646] Cache clearing complete. Please run "npm run dev" to restart your application.
+[11:16:47.217]  ⚠ Invalid next.config.mjs options detected: 
+[11:16:47.218]  ⚠     Expected object, received boolean at "experimental.serverActions"
+[11:16:47.218]  ⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
+[11:16:47.225] Attention: Next.js now collects completely anonymous telemetry regarding usage.
+[11:16:47.225] This information is used to shape Next.js' roadmap and prioritize features.
+[11:16:47.226] You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+[11:16:47.226] https://nextjs.org/telemetry
+[11:16:47.226] 
+[11:16:47.285]    ▲ Next.js 15.4.2
+[11:16:47.286]    - Environments: .env.production
+[11:16:47.286]    - Experiments (use with caution):
+[11:16:47.286]      ✓ serverActions
+[11:16:47.286]      ✓ scrollRestoration
+[11:16:47.286]      · optimizePackageImports
+[11:16:47.287] 
+[11:16:47.368]    Creating an optimized production build ...
+[11:17:34.285]  ✓ Compiled successfully in 46s
+[11:17:34.290]    Skipping validation of types
+[11:17:34.290]    Skipping linting
+[11:17:34.577]    Collecting page data ...
+[11:17:41.053]    Generating static pages (0/191) ...
+[11:17:42.029] Error occurred prerendering page "/". Read more: https://nextjs.org/docs/messages/prerender-error
+[11:17:42.029] [Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object.] {
+[11:17:42.030]   digest: '512221389'
+[11:17:42.030] }
+[11:17:42.030] Export encountered an error on /page: /, exiting the build.
+[11:17:42.045]  ⨯ Next.js build worker exited with code: 1 and signal: null
+[11:17:42.118] Error: Command "npm run build:clean" exited with 1
+[11:17:42.399] 
+[11:17:45.465] Exiting build container
