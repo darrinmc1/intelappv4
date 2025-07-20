@@ -6,7 +6,6 @@ const nextConfig = {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
     scrollRestoration: true,
     largePageDataBytes: 128 * 1000, // 128KB
-    serverActions: true, // Enable server actions
   },
   
   // Output configuration for better deployment compatibility
