@@ -70,30 +70,22 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Connect</h3>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="mailto:info@TheIntelAnalystAcademy.com"
+                <Link
+                  href="/request-topic"
                   className="text-gray-600 hover:text-blue-600 transition-colors"
                 >
                   Contact Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="mailto:info@TheIntelAnalystAcademy.com"
-                  className="text-gray-600 hover:text-blue-600 transition-colors"
-                >
-                  Email for updates or more topics
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+                <Link href="/privacy" className="text-gray-600 hover:text-blue-600 transition-colors">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+                <Link href="/terms" className="text-gray-600 hover:text-blue-600 transition-colors">
                   Terms of Service
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
