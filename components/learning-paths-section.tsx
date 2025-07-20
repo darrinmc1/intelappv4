@@ -1,7 +1,12 @@
-import TargetProfilingPage from "@/app/learning-paths/target-profiling/page"
-import { LearningPathCard } from "@/components/learning-path-card"
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import { LearningPathCard } from "@/components/learning-path-card";
+import { Grid, List } from "lucide-react";
 
 export function LearningPathsSection() {
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   // Define the 6 featured learning paths exactly as shown in the screenshot
   const featuredPaths = [
     {
@@ -69,24 +74,76 @@ export function LearningPathsSection() {
   return (
     <section className="py-12 md:py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">Featured Learning Paths</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featuredPaths.map((path, index) => (
-            <div key={path.title}>
-              <LearningPathCard
-                title={path.title}
-                humorousQuote={path.humorousQuote}
-                description={path.description}
-                image={path.imagePath}
-                href={path.path}
-                difficulty={path.difficulty}
-                topics={path.topicCount}
-                estimatedTime={path.estimatedTime}
-                enable3D={true}
-                intensity="medium"
-              />
-            </div>
-          ))}
+        <div className="mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">Featured Learning Paths</h2>
+          <div className="flex items-center gap-2 bg-gray-100 p-1 rounded-md w-fit mx-auto">
+            <button 
+              onClick={() => setViewMode('grid')} 
+              className={`p-2 rounded-md flex items-center gap-1 ${viewMode === 'grid' ? 'bg-white shadow-sm' : 'hover:bg-gray-200'}`}
+              aria-label="Grid view"
+            >
+              <Grid size={18} />
+              <span className="text-sm">Grid</span>
+            </button>
+            <button 
+              onClick={() => setViewMode('list')} 
+              className={`p-2 rounded-md flex items-center gap-1 ${viewMode === 'list' ? 'bg-white shadow-sm' : 'hover:bg-gray-200'}`}
+              aria-label="List view"
+            >
+              <List size={18} />
+              <span className="text-sm">List</span>
+            </button>
+          </div>
+        </div>
+        {viewMode === 'grid' ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredPaths.map((path, index) => (
+              <div key={path.title}>
+                <LearningPathCard
+                  title={path.title}
+                  humorousQuote={path.humorousQuote}
+                  description={path.description}
+                  image={path.imagePath}
+                  href={path.path}
+                  difficulty={path.difficulty}
+                  topics={path.topicCount}
+                  estimatedTime={path.estimatedTime}
+                  enable3D={true}
+                  intensity="medium"
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="space-y-4">
+            {featuredPaths.map((path, index) => (
+              <div key={path.title} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <Link href={path.path} className="flex items-center p-4">
+                  <div className="w-16 h-16 rounded-md overflow-hidden flex-shrink-0 mr-4">
+                    <img src={path.imagePath} alt={path.title} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="font-bold text-lg">{path.title}</h3>
+                    <p className="text-gray-600 text-sm mb-1">{path.description}</p>
+                    <div className="flex items-center text-xs text-gray-500">
+                      <span className="mr-3">{path.difficulty}</span>
+                      <span className="mr-3">{path.topicCount} topics</span>
+                      <span>{path.estimatedTime}</span>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+        )}
+        
+        <div className="flex justify-center mt-12">
+          <Link 
+            href="/learning-paths" 
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md text-lg font-medium transition-colors shadow-md hover:shadow-lg"
+          >
+            View All Learning Paths
+          </Link>
         </div>
       </div>
     </section>

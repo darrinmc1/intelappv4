@@ -12,6 +12,7 @@ import { SearchBar } from "@/components/search/search-bar"
 import { MobileSearch } from "@/components/search/mobile-search"
 import { CategoryThumbnail } from "@/components/category-thumbnail"
 import { useMediaQuery } from "@/hooks/use-media-query"
+import { OtherSitesMenu } from "@/components/other-sites-menu"
 
 export function Header() {
   const router = useRouter()
@@ -95,6 +96,12 @@ export function Header() {
       id: "admin",
       label: "Admin",
       active: pathname.startsWith("/admin"),
+      hasDropdown: true,
+    },
+    {
+      id: "other-sites",
+      label: "Other Learning Sites",
+      active: false,
       hasDropdown: true,
     },
   ]
@@ -236,12 +243,12 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="w-[240px] sm:w-[300px]">
-              <div className="flex items-center gap-2 mb-6">
+              <div className="flex items-center gap-3 mb-6">
                 <StaticImage
                   src="/intelligence-analysis-workspace.png"
                   alt="Intelligence Analyst Academy Logo"
-                  width={40}
-                  height={40}
+                  width={48}
+                  height={48}
                   className="rounded-md"
                 />
                 <span className="font-bold text-lg">Intelligence Analyst Academy</span>
@@ -273,18 +280,18 @@ export function Header() {
             </SheetContent>
           </Sheet>
 
-          <Link href="/" className="flex items-center gap-2" data-testid="site-logo">
-            <div className="relative w-8 h-8 overflow-hidden rounded-md">
+          <Link href="/" className="flex items-center gap-3" data-testid="site-logo">
+            <div className="relative w-12 h-12 overflow-hidden rounded-md">
               <StaticImage
                 src="/intelligence-analysis-workspace.png"
                 alt="Intelligence Analyst Academy Logo"
-                width={32}
-                height={32}
+                width={48}
+                height={48}
                 className="object-cover"
               />
             </div>
             <span className="font-bold hidden md:inline-block">The Intel Analyst Academy</span>
-            <span className="font-bold md:hidden">IAA</span>
+            <span className="font-bold md:hidden">The Intel Analyst Academy</span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-6">
@@ -330,6 +337,9 @@ export function Header() {
                     )}
                     {item.id === "admin" && (
                       <AdminDropdown closeDropdowns={closeDropdowns} isMobile={isMobile} isTablet={isTablet} />
+                    )}
+                    {item.id === "other-sites" && (
+                      <OtherSitesMenu />
                     )}
                   </div>
                 </div>

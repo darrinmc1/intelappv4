@@ -123,3 +123,242 @@
 .neu-loading {
   animation: neuLoading 1.5s ease-in-out infinite;
 }
+
+/* Mobile view simulation styles */
+.mobile-view-simulation {
+  max-width: 375px;
+  margin: 0 auto;
+  position: relative;
+  height: 100vh;
+  overflow-y: auto;
+  border-left: 16px solid #222;
+  border-right: 16px solid #222;
+  border-top: 60px solid #222;
+  border-bottom: 60px solid #222;
+  border-radius: 36px;
+  box-shadow: 0 0 0 2px #111, 0 20px 40px rgba(0, 0, 0, 0.2);
+  background-color: #a4daff;
+}
+
+.mobile-view-simulation::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 10px;
+  background: #333;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.mobile-view-simulation .container {
+  max-width: 100% !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+/* Fix for header in mobile view */
+.mobile-view-simulation header {
+  padding: 8px 0;
+  background-color: #a4daff !important;
+  box-shadow: none !important;
+  position: relative !important;
+  width: 100% !important;
+  z-index: 50 !important;
+  top: 0;
+  margin-bottom: 0 !important;
+  border-bottom: none !important;
+}
+
+.mobile-view-simulation header .container {
+  padding: 0 8px !important;
+  height: auto !important;
+}
+
+.mobile-view-simulation header a[data-testid="site-logo"] {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.mobile-view-simulation header a[data-testid="site-logo"] span {
+  font-size: 14px !important;
+  line-height: 1.2 !important;
+  max-width: 120px !important;
+  display: inline-block !important;
+}
+
+.mobile-view-simulation nav {
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+
+.mobile-view-simulation nav::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+.mobile-view-simulation .flex.items-center.gap-4 {
+  gap: 8px !important;
+}
+
+/* Fix search bar in mobile view */
+.mobile-view-simulation input[type="text"] {
+  height: 36px !important;
+  font-size: 14px !important;
+  border-radius: 18px !important;
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Fix Request a Topic button */
+.mobile-view-simulation a[href="/request-topic"] {
+  height: 36px !important;
+  padding: 0 12px !important;
+  font-size: 14px !important;
+  white-space: nowrap !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Fix hero section */
+.mobile-view-simulation section.relative.bg-gradient-to-br {
+  border-radius: 0 !important;
+  margin-top: 0 !important;
+}
+
+.mobile-view-simulation h1.text-4xl {
+  font-size: 3rem !important;
+  line-height: 1.1 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.mobile-view-simulation h1.text-4xl span.block {
+  font-size: 3.5rem !important;
+}
+
+.mobile-view-simulation header nav {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+
+.mobile-view-simulation header nav::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* Fix for site logo in mobile view */
+.mobile-view-simulation header a[data-testid="site-logo"] span.md\:hidden {
+  display: inline-block !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  color: #000 !important;
+  white-space: normal !important;
+  line-height: 1.2 !important;
+}
+
+.mobile-view-simulation header .container {
+  flex-direction: row !important;
+  align-items: center;
+  height: auto !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  justify-content: space-between !important;
+}
+
+.mobile-view-simulation header a[data-testid="site-logo"] {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.mobile-view-simulation header a[data-testid="site-logo"] {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.mobile-view-simulation header a[data-testid="site-logo"] div {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.mobile-view-simulation header a[data-testid="site-logo"] span {
+  display: inline-block !important;
+  font-size: 14px !important;
+  line-height: 1.2 !important;
+  max-width: 100px !important;
+  color: #000 !important;
+}
+
+/* Fix for mobile menu button */
+.mobile-view-simulation button[data-testid="mobile-menu-button"] {
+  color: #000 !important;
+}
+
+/* Fix for search bar in mobile view */
+.mobile-view-simulation .flex.items-center.gap-4 {
+  margin-top: 0 !important;
+}
+
+.mobile-view-simulation input[placeholder="Search intelligence topics..."] {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  border-radius: 20px !important;
+}
+
+/* Fix for Request a Topic button */
+.mobile-view-simulation a[href="/request-topic"] {
+  background-color: #3b82f6 !important;
+  color: white !important;
+  border-radius: 4px !important;
+  padding: 8px 12px !important;
+  font-size: 14px !important;
+  white-space: nowrap !important;
+}
+
+.mobile-view-simulation header nav {
+  display: flex !important;
+}
+
+.mobile-view-simulation header nav ul {
+  display: flex !important;
+  margin-top: 0 !important;
+  gap: 12px;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+/* Fix for hero section in mobile view */
+.mobile-view-simulation section.relative.bg-gradient-to-br {
+  min-height: 400px !important;
+}
+
+.mobile-view-simulation h1.text-4xl {
+  font-size: 2.5rem !important;
+  line-height: 1.2 !important;
+}
+
+.mobile-view-simulation .text-xl, 
+.mobile-view-simulation .text-2xl {
+  font-size: 1.25rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Fix for search bar in mobile view */
+.mobile-view-simulation .flex.items-center.gap-4 {
+  gap: 8px !important;
+}
+
+.mobile-view-simulation button[data-testid="mobile-menu-button"] {
+  padding: 4px !important;
+}
+
+.mobile-view-simulation a[data-testid="site-logo"] {
+  margin-left: -8px !important;
+}

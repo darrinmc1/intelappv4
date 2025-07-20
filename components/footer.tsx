@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className="py-8 mt-auto">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           <div>
             <h3 className="text-lg font-semibold mb-4">The Intel Analyst Academy</h3>
             <p className="text-gray-600">Professional education for intelligence analysts at all levels.</p>
@@ -94,6 +94,40 @@ export function Footer() {
                 <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
                   Terms of Service
                 </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Other learning sites</h3>
+            <div className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-md text-xs font-medium mb-3 inline-block">
+              Coming Soon
+            </div>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/request-topic?interest=osint-advanced" className="text-gray-600 hover:text-blue-600 transition-colors">
+                  OSINT Advanced Course
+                </Link>
+              </li>
+              <li>
+                <Link href="/request-topic?interest=management" className="text-gray-600 hover:text-blue-600 transition-colors">
+                  Management
+                </Link>
+              </li>
+              <li>
+                <Link href="/request-topic?interest=project-management" className="text-gray-600 hover:text-blue-600 transition-colors">
+                  Project Management
+                </Link>
+              </li>
+              <li>
+                <Link href="/request-topic?interest=renovations" className="text-gray-600 hover:text-blue-600 transition-colors">
+                  Renovations
+                </Link>
+              </li>
+              <li>
+                <Link href="/request-topic?interest=cybersecurity" className="text-gray-600 hover:text-blue-600 transition-colors">
+                  Cybersecurity
+                </Link>
               </li>
             </ul>
           </div>

@@ -1,4 +1,4 @@
-// app/layout.tsx - Remove "use client" and unused imports
+// app/layout.tsx
 import type React from "react"
 import "./globals.css"
 import "./button-animations.css"
@@ -9,11 +9,12 @@ import { ScrollToTop } from "@/components/scroll-to-top"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { LayoutWrapper } from "@/components/layout-wrapper"
+import { MobileViewWrapper } from "@/components/mobile-view-wrapper"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "The The Intel Analyst Academy",
+  title: "The Intel Analyst Academy",
   description: "Learn intelligence analysis techniques and methodologies",
   generator: 'v0.dev'
 }
@@ -35,6 +36,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <ScrollToTop />
+        <MobileViewWrapper />
       </body>
     </html>
   )

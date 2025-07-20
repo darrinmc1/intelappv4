@@ -229,7 +229,7 @@ export default function LearningPathsPage() {
         </p>
       </div>
 
-      <div className="flex justify-end mb-6">
+      <div className="flex justify-center mb-6">
         <div className="inline-flex rounded-md shadow-sm">
           <Button
             variant={viewMode === "card" ? "default" : "outline"}
@@ -239,7 +239,7 @@ export default function LearningPathsPage() {
             aria-label="Card view"
           >
             <Grid className="h-4 w-4 mr-2" />
-            Cards
+            Grid
           </Button>
           <Button
             variant={viewMode === "list" ? "default" : "outline"}
