@@ -93,7 +93,7 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Other learning sites</h3>
             <div className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-md text-xs font-medium mb-3 inline-block">
-              Coming Soon
+              In Development
             </div>
             <ul className="space-y-2">
               <li>
@@ -102,24 +102,24 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/request-topic?interest=management" className="text-gray-600 hover:text-blue-600 transition-colors">
+                <a href="https://v0-management-app-eight.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
                   Management
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/request-topic?interest=project-management" className="text-gray-600 hover:text-blue-600 transition-colors">
+                <a href="https://3000-i9bm041qafwh68hb4auhu-bf09371d.manusvm.computer" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
                   Project Management
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/request-topic?interest=renovations" className="text-gray-600 hover:text-blue-600 transition-colors">
+                <a href="https://v0-home-renovation-app-smoky.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
                   Renovations
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/request-topic?interest=cybersecurity" className="text-gray-600 hover:text-blue-600 transition-colors">
+                <a href="https://v0-comprehensive-security-training.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
                   Cybersecurity
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
