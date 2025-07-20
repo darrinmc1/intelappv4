@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ChevronRight } from "lucide-react"
+import { ChevronRight, FileText, ClipboardList, FileCheck } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
@@ -19,29 +19,39 @@ export default function ReportWritingPath() {
       
 
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
-        <div>
-          <h1 className="text-4xl font-bold tracking-tight">Intelligence Report Writing</h1>
-          <p className="text-muted-foreground mt-2">
-            Master the art of creating clear, concise, and effective intelligence reports
-          </p>
+        <div className="flex items-center gap-4">
+          <div className="bg-yellow-500 p-3 rounded-full shadow-lg hidden md:flex">
+            <FileText className="h-10 w-10 text-gray-800" strokeWidth={1.5} />
+          </div>
+          <div>
+            <h1 className="text-4xl font-bold tracking-tight">Intelligence Report Writing</h1>
+            <p className="text-muted-foreground mt-2">
+              Master the art of creating clear, concise, and effective intelligence reports
+            </p>
+          </div>
         </div>
       </div>
 
-      <div className="relative w-full h-64 mb-8 rounded-lg overflow-hidden">
-        <div className="grid grid-cols-1 md:grid-cols-2 h-full">
-          <div className="flex items-center bg-gray-800 p-8">
-            <div className="text-white">
-              <h2 className="text-3xl font-bold mb-2">Intelligence Report Writing</h2>
-              <p className="max-w-md">
-                Learn how to structure, write, and present intelligence reports for maximum impact and clarity
-              </p>
+      <div className="relative w-full mb-8 rounded-lg overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="bg-gray-800 p-8 relative" style={{minHeight: "200px"}}>
+            <div className="flex items-center gap-6 h-full">
+              <div className="bg-yellow-500 p-4 rounded-full shadow-lg flex-shrink-0">
+                <FileText className="h-12 w-12 text-gray-800" strokeWidth={1.5} />
+              </div>
+              <div className="text-white">
+                <h2 className="text-3xl font-bold mb-2">Report Writing Skills</h2>
+                <p className="max-w-md">
+                  Learn how to structure, write, and present intelligence reports for maximum impact and clarity
+                </p>
+              </div>
             </div>
           </div>
-          <div className="relative h-full">
+          <div className="relative" style={{minHeight: "200px"}}>
             <StaticImage
               src="/report-writing-banner-large.png"
               alt="Report Writing Banner"
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full absolute inset-0"
             />
           </div>
         </div>
@@ -138,7 +148,7 @@ export default function ReportWritingPath() {
           <CardContent>
             <div className="grid gap-4">
               <div className="flex items-center justify-between py-2">
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 flex-1 min-w-0">
                   <div className="relative w-12 h-12 rounded-md overflow-hidden flex-shrink-0">
                     <StaticImage
                       src="/intelligence-report-fundamentals-thumb.png"
@@ -146,20 +156,20 @@ export default function ReportWritingPath() {
                       className="object-cover"
                     />
                   </div>
-                  <div>
-                    <h3 className="font-medium">What Makes a Good Intelligence Report?</h3>
-                    <p className="text-sm text-muted-foreground">15 min read</p>
+                  <div className="min-w-0 flex-1 pr-4">
+                    <h3 className="font-medium line-clamp-2 text-sm md:text-base">What Makes a Good Intelligence Report?</h3>
+                    <p className="text-xs md:text-sm text-muted-foreground">15 min read</p>
                   </div>
                 </div>
-                <Button asChild variant="ghost" size="sm">
-                  <Link href="/topics/good-intelligence-report" className="flex items-center">
+                <Button asChild variant="ghost" size="sm" className="flex-shrink-0">
+                  <Link href="/topics/good-intelligence-report" className="flex items-center whitespace-nowrap">
                     Start <ChevronRight className="ml-1 h-4 w-4" />
                   </Link>
                 </Button>
               </div>
               <Separator />
               <div className="flex items-center justify-between py-2">
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 flex-1 min-w-0">
                   <div className="relative w-12 h-12 rounded-md overflow-hidden flex-shrink-0">
                     <StaticImage
                       src="/intelligence-report-components-thumb.png"
@@ -167,20 +177,20 @@ export default function ReportWritingPath() {
                       className="object-cover"
                     />
                   </div>
-                  <div>
-                    <h3 className="font-medium">Components of a Basic Intelligence Report</h3>
-                    <p className="text-sm text-muted-foreground">15 min read</p>
+                  <div className="min-w-0 flex-1 pr-4">
+                    <h3 className="font-medium line-clamp-2 text-sm md:text-base">Components of a Basic Intelligence Report</h3>
+                    <p className="text-xs md:text-sm text-muted-foreground">15 min read</p>
                   </div>
                 </div>
-                <Button asChild variant="ghost" size="sm">
-                  <Link href="/topics/intelligence-report-components" className="flex items-center">
+                <Button asChild variant="ghost" size="sm" className="flex-shrink-0">
+                  <Link href="/topics/intelligence-report-components" className="flex items-center whitespace-nowrap">
                     Start <ChevronRight className="ml-1 h-4 w-4" />
                   </Link>
                 </Button>
               </div>
               <Separator />
               <div className="flex items-center justify-between py-2">
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 flex-1 min-w-0">
                   <div className="relative w-12 h-12 rounded-md overflow-hidden flex-shrink-0">
                     <StaticImage
                       src="/intelligence-report-types-thumb.png"
@@ -188,13 +198,13 @@ export default function ReportWritingPath() {
                       className="object-cover"
                     />
                   </div>
-                  <div>
-                    <h3 className="font-medium">Difference Between Strategic, Operational, and Tactical Reports</h3>
-                    <p className="text-sm text-muted-foreground">20 min read</p>
+                  <div className="min-w-0 flex-1 pr-4">
+                    <h3 className="font-medium line-clamp-2 text-sm md:text-base">Difference Between Strategic, Operational, and Tactical Reports</h3>
+                    <p className="text-xs md:text-sm text-muted-foreground">20 min read</p>
                   </div>
                 </div>
-                <Button asChild variant="ghost" size="sm">
-                  <Link href="/topics/intelligence-report-types" className="flex items-center">
+                <Button asChild variant="ghost" size="sm" className="flex-shrink-0">
+                  <Link href="/topics/intelligence-report-types" className="flex items-center whitespace-nowrap">
                     Start <ChevronRight className="ml-1 h-4 w-4" />
                   </Link>
                 </Button>
@@ -209,8 +219,8 @@ export default function ReportWritingPath() {
                       className="object-cover"
                     />
                   </div>
-                  <div>
-                    <h3 className="font-medium">Importance of Evidence-Based Conclusions</h3>
+                  <div className="max-w-[calc(100%-80px)]">
+                    <h3 className="font-medium line-clamp-2">Importance of Evidence-Based Conclusions</h3>
                     <p className="text-sm text-muted-foreground">15 min read</p>
                   </div>
                 </div>
@@ -240,8 +250,8 @@ export default function ReportWritingPath() {
                       className="object-cover"
                     />
                   </div>
-                  <div>
-                    <h3 className="font-medium">Executive Summary Mastery</h3>
+                  <div className="max-w-[calc(100%-80px)]">
+                    <h3 className="font-medium line-clamp-2">Executive Summary Mastery</h3>
                     <p className="text-sm text-muted-foreground">25 min read</p>
                   </div>
                 </div>
@@ -261,8 +271,8 @@ export default function ReportWritingPath() {
                       className="object-cover"
                     />
                   </div>
-                  <div>
-                    <h3 className="font-medium">Main Body Organization</h3>
+                  <div className="max-w-[calc(100%-80px)]">
+                    <h3 className="font-medium line-clamp-2">Main Body Organization</h3>
                     <p className="text-sm text-muted-foreground">20 min read</p>
                   </div>
                 </div>
@@ -282,8 +292,8 @@ export default function ReportWritingPath() {
                       className="object-cover"
                     />
                   </div>
-                  <div>
-                    <h3 className="font-medium">Conclusion Development</h3>
+                  <div className="max-w-[calc(100%-80px)]">
+                    <h3 className="font-medium line-clamp-2">Conclusion Development</h3>
                     <p className="text-sm text-muted-foreground">20 min read</p>
                   </div>
                 </div>
@@ -303,8 +313,8 @@ export default function ReportWritingPath() {
                       className="object-cover"
                     />
                   </div>
-                  <div>
-                    <h3 className="font-medium">Recommendation Framework</h3>
+                  <div className="max-w-[calc(100%-80px)]">
+                    <h3 className="font-medium line-clamp-2">Recommendation Framework</h3>
                     <p className="text-sm text-muted-foreground">25 min read</p>
                   </div>
                 </div>
@@ -336,8 +346,8 @@ export default function ReportWritingPath() {
                       className="object-cover"
                     />
                   </div>
-                  <div>
-                    <h3 className="font-medium">Clear Writing Principles</h3>
+                  <div className="max-w-[calc(100%-80px)]">
+                    <h3 className="font-medium line-clamp-2">Clear Writing Principles</h3>
                     <p className="text-sm text-muted-foreground">15 min read</p>
                   </div>
                 </div>
@@ -353,8 +363,8 @@ export default function ReportWritingPath() {
                   <div className="relative w-12 h-12 rounded-md overflow-hidden flex-shrink-0">
                     <StaticImage src="/visual-aids-thumb.png" alt="Data Presentation" className="object-cover" />
                   </div>
-                  <div>
-                    <h3 className="font-medium">Data Presentation</h3>
+                  <div className="max-w-[calc(100%-80px)]">
+                    <h3 className="font-medium line-clamp-2">Data Presentation</h3>
                     <p className="text-sm text-muted-foreground">25 min read</p>
                   </div>
                 </div>
@@ -374,8 +384,8 @@ export default function ReportWritingPath() {
                       className="object-cover"
                     />
                   </div>
-                  <div>
-                    <h3 className="font-medium">Estimative Language</h3>
+                  <div className="max-w-[calc(100%-80px)]">
+                    <h3 className="font-medium line-clamp-2">Estimative Language</h3>
                     <p className="text-sm text-muted-foreground">30 min read</p>
                   </div>
                 </div>
@@ -407,8 +417,8 @@ export default function ReportWritingPath() {
                       className="object-cover"
                     />
                   </div>
-                  <div>
-                    <h3 className="font-medium">Strategic Reports</h3>
+                  <div className="max-w-[calc(100%-80px)]">
+                    <h3 className="font-medium line-clamp-2">Strategic Reports</h3>
                     <p className="text-sm text-muted-foreground">35 min read</p>
                   </div>
                 </div>
@@ -428,8 +438,8 @@ export default function ReportWritingPath() {
                       className="object-cover"
                     />
                   </div>
-                  <div>
-                    <h3 className="font-medium">Operational Reports</h3>
+                  <div className="max-w-[calc(100%-80px)]">
+                    <h3 className="font-medium line-clamp-2">Operational Reports</h3>
                     <p className="text-sm text-muted-foreground">25 min read</p>
                   </div>
                 </div>
@@ -449,8 +459,8 @@ export default function ReportWritingPath() {
                       className="object-cover"
                     />
                   </div>
-                  <div>
-                    <h3 className="font-medium">Tactical Reports</h3>
+                  <div className="max-w-[calc(100%-80px)]">
+                    <h3 className="font-medium line-clamp-2">Tactical Reports</h3>
                     <p className="text-sm text-muted-foreground">30 min read</p>
                   </div>
                 </div>
@@ -470,8 +480,8 @@ export default function ReportWritingPath() {
                       className="object-cover"
                     />
                   </div>
-                  <div>
-                    <h3 className="font-medium">Specialized Intelligence Products</h3>
+                  <div className="max-w-[calc(100%-80px)]">
+                    <h3 className="font-medium line-clamp-2">Specialized Intelligence Products</h3>
                     <p className="text-sm text-muted-foreground">25 min read</p>
                   </div>
                 </div>
@@ -501,8 +511,8 @@ export default function ReportWritingPath() {
                       className="object-cover"
                     />
                   </div>
-                  <div>
-                    <h3 className="font-medium">Multi-Source Integration</h3>
+                  <div className="max-w-[calc(100%-80px)]">
+                    <h3 className="font-medium line-clamp-2">Multi-Source Integration</h3>
                     <p className="text-sm text-muted-foreground">30 min read</p>
                   </div>
                 </div>
@@ -522,8 +532,8 @@ export default function ReportWritingPath() {
                       className="object-cover"
                     />
                   </div>
-                  <div>
-                    <h3 className="font-medium">Visual Intelligence Reporting</h3>
+                  <div className="max-w-[calc(100%-80px)]">
+                    <h3 className="font-medium line-clamp-2">Visual Intelligence Reporting</h3>
                     <p className="text-sm text-muted-foreground">35 min read</p>
                   </div>
                 </div>
@@ -543,8 +553,8 @@ export default function ReportWritingPath() {
                       className="object-cover"
                     />
                   </div>
-                  <div>
-                    <h3 className="font-medium">Digital Evidence Documentation</h3>
+                  <div className="max-w-[calc(100%-80px)]">
+                    <h3 className="font-medium line-clamp-2">Digital Evidence Documentation</h3>
                     <p className="text-sm text-muted-foreground">25 min read</p>
                   </div>
                 </div>

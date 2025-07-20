@@ -29,11 +29,6 @@ export function CategoryPageTemplate({
         <div>
           <h1 className="text-4xl font-bold mb-4">{title}</h1>
           <p className="text-lg text-muted-foreground mb-8">{description}</p>
-          <div className="space-y-4">
-            {courses.slice(0, 3).map((course) => (
-              <StartCourseButton key={course.path} path={course.path} className="w-full justify-start px-4" />
-            ))}
-          </div>
         </div>
         <div className="relative h-[300px] rounded-lg overflow-hidden">
           <Image
@@ -53,7 +48,12 @@ export function CategoryPageTemplate({
             <div key={course.path} className="border rounded-lg p-6 hover:shadow-md transition-shadow">
               <h3 className="text-xl font-semibold mb-2">{course.title}</h3>
               <p className="text-muted-foreground mb-4">{course.description}</p>
-              <StartCourseButton path={course.path} />
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-medium">Course</span>
+                <StartCourseButton path={course.path}>
+                  Start: {course.title}
+                </StartCourseButton>
+              </div>
             </div>
           ))}
         </div>
@@ -64,9 +64,15 @@ export function CategoryPageTemplate({
           <h2 className="text-2xl font-bold mb-6">Related Categories</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {relatedCategories.map((category) => (
-              <StartCourseButton key={category.path} path={category.path} className="w-full justify-start px-4">
-                {category.title}
-              </StartCourseButton>
+              <div key={category.path} className="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                <h3 className="text-lg font-semibold mb-2">{category.title}</h3>
+                <StartCourseButton 
+                  path={category.path} 
+                  variant="outline"
+                >
+                  Explore Category
+                </StartCourseButton>
+              </div>
             ))}
           </div>
         </div>
