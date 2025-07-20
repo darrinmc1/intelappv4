@@ -10,6 +10,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { LayoutWrapper } from "@/components/layout-wrapper"
 import { MobileViewWrapper } from "@/components/mobile-view-wrapper"
+import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -37,6 +38,7 @@ export default function RootLayout({
         <Footer />
         <ScrollToTop />
         <MobileViewWrapper />
+        <Toaster />
       </body>
     </html>
   )
