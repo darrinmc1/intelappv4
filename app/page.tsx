@@ -1,7 +1,10 @@
-import { redirect } from 'next/navigation';
+import MainPage from './main/page';
+import MainLayout from './main/layout';
 
 export default function HomePage() {
-  redirect('/(main)');
-  return null;
-  )
+  return (
+    <MainLayout>
+      <MainPage />
+    </MainLayout>
+  );
 }
