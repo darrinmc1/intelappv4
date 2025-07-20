@@ -2,20 +2,24 @@
 const nextConfig = {
   // Performance optimizations
   experimental: {
-    optimizeCss: true,
+    optimizeCss: false, // Disable experimental CSS optimization
     optimizePackageImports: ['lucide-react', 'framer-motion'],
     scrollRestoration: true,
     largePageDataBytes: 128 * 1000, // 128KB
-    serverActions: {},
+    serverActions: true, // Explicitly enable server actions
   },
   
   // Output configuration for better deployment compatibility
   trailingSlash: true,
+  output: 'standalone', // Use standalone output for better Vercel compatibility
   
   // Image optimization
   images: {
     unoptimized: true,
   },
+  
+  // Disable React strict mode to avoid potential issues
+  reactStrictMode: false,
   
   // Compiler optimizations
   compiler: {

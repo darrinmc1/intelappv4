@@ -1,0 +1,11 @@
+.git
+.github
+deploy-static
+deploy-temp
+documentation
+scripts
+static-deploy
+.env
+.env.local
+README.md
+*.log
