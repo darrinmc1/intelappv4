@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "next build",
+  "buildCommand": "npm run build:clean",
   "outputDirectory": ".next",
   "framework": "nextjs",
   "cleanUrls": true,
