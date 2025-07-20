@@ -1,12 +1,17 @@
+"use client";
+
 import { Suspense } from "react"
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
-import { HeroSection } from "@/components/hero-section"
-import { IntelligenceTypesShowcase } from "@/components/intelligence-types-showcase"
-import { LearningPathsSection } from "@/components/learning-paths-section"
-import { NewsletterSignup } from "@/components/newsletter-signup"
-import { LazySection } from "@/components/optimized/lazy-section"
-import { PerformanceMonitor } from "@/components/optimized/performance-monitor"
+import dynamic from "next/dynamic"
+
+// Use dynamic imports with SSR disabled for problematic components
+const HeroSection = dynamic(() => import("@/components/hero-section"), { ssr: true })
+const IntelligenceTypesShowcase = dynamic(() => import("@/components/intelligence-types-showcase"), { ssr: false })
+const LearningPathsSection = dynamic(() => import("@/components/learning-paths-section"), { ssr: false })
+const NewsletterSignup = dynamic(() => import("@/components/newsletter-signup"), { ssr: false })
+const LazySection = dynamic(() => import("@/components/optimized/lazy-section"), { ssr: true })
+const PerformanceMonitor = dynamic(() => import("@/components/optimized/performance-monitor"), { ssr: false })
 
 export default function HomePage() {
   return (
